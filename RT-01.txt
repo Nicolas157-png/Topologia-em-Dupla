@@ -1,0 +1,37 @@
+SCRIPT do ROUTER:
+en
+config t
+host name RT-01
+enable password NICOLAS-enable
+line console 0
+password Nicolas*console
+login
+exit
+line vty 0 15
+password NICOLAS*vty
+login
+exit
+interface gigabitethernet 0/0
+ip address 192.168.0.1 255.255.255.0
+no shut down
+exit
+interface gigabitethernet 0/1
+ip address 172.16.0.1 255.255.0.0
+no shut down
+exit
+service password-encryption
+ip domain name 1rede.local
+crypto key generate rsa general-keys modulus 1024
+line vty 0 15
+transport input ssh
+login
+exit
+username Nicolas privilege 15 secret Nicolas
+line console 0
+login local
+exit
+line vty 0 15
+login local
+exit
+exit
+wr
