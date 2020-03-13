@@ -1,0 +1,35 @@
+1- Configurar PC's:
+1° Conectar o PC-01 na porta f0/1 da REDE-01 e o PC-02 na porta f0/1 na REDE-02
+2° Colocar nomes  PCs ( PC-01 (rede-01) e PC-02 (rede-02 )
+3° Colocar os  IPs   ( PC-01 192.168.0.10 e PC-02 172.16.0.10)
+4° Colocar as Máscaras( PC-01 255.255.255.0   PC-02 255.255.0.0)
+5° Colocar  Gateway  (PC-01 192.168.0.1 e PC-02 172.16.0.1)
+
+2- Configurar SWITCHs:
+1°Conectar o SW-01 na porta g0/1 da REDE-01 e o SW-02 na porta g1/1 da REDE-02
+2° Colocar nome nos Switchs (SW-01 na REDE-01 e SW-02 na REDE-02)
+3° Colocar banners nos Switchs ( "ACESSO APENAS PARA PESSOAS AUTORIZADAS")
+4° Colocar senha Nos dois switchs enable password NICOLAS*enable
+5° Colocar senha nos dois switchs console : NICOLAS*console
+6° Colocar senha nos dois switchs VTY : NICOLAS*vty
+7°Encriptar todas as Senhas nos dois switchs
+8°Colocar o IP nos dois switchs:no SW-01 192.168.0.254 e no SW-02: 172.16.255.254
+9°Colocar o Gateway:no SW-01:192.168.0.1 e no SW-02:172.16.0.1
+10° Colocar os Domínios dois switchs: 1rede.local
+11°Colocar chave SSH no dois switchs: 1024 bits (e testar)
+12°Criar pelo menos um Usuário local no dois switchs com privilégio 15
+13°Colocar no dois switchs login local  na console e na VTY
+
+3- Configurar ROUTER:
+1°Conetar o SW-01 na porta g1/0 e o SW-02 na porta g1/1
+2°Colocar o nome no Router : RT-01
+3°Colocar banner no router:  "ACESSO APENAS PARA PESSOAS AUTORIZADAS"
+4°Colocar senha enable:  NICOLAS*enable
+5°Colocar senha console: NICOLAS*console
+6°Colocar senha VTY: NICOLAS*vty
+7°Colocar os IPs:192.168.0.1 na interface G0/0 do SW-01 172.16.0.1 na interface G0/1 do SW-02
+8ºEncriptar todas as senhas
+9°Colocar o dominío: 1rede.local
+10°Colocar chave SSH: 1024 bits
+11°Criar pelo menos um Usuário local com privilégio 15 e colocar senha
+12°Colocar login local na console e  na VTY
